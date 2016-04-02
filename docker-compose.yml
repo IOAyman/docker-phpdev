@@ -1,0 +1,17 @@
+server:
+  image: php:7-apache
+  volumes:
+    - ./src:/var/www/html
+  ports:
+    - "80:80"
+  links:
+    - phpdev-db
+
+phpdev-db:
+  image: mysql
+  environment:
+    - MYSQL_DATABASE=phpdev
+    - MYSQL_ROOT_PASSWORD=helloworld
+    - MYSQL_ALLOW_EMPTY_PASSWORD=false
+    - MYSQL_USER=iouser
+    - MYSQL_PASSWORD=iodevpassword
