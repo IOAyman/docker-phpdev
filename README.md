@@ -26,7 +26,3 @@ curl localhost
 # Shutdown the containers
 docker-compose down
 ```
-
-## TODO
-- add database connexion test to ./src/index.php
-- auto-import a .sql or .dump into the db
