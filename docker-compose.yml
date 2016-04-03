@@ -1,5 +1,5 @@
 server:
-  build: ./server
+  image: ioayman/php:7-pdo-apache
   volumes:
     - ./src:/var/www/html:ro
   ports:
