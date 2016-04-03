@@ -1,15 +1,30 @@
 # Docker PHP-Dev
 This is a _dockerized_ basic project structure for PHP development.  
 
-## Things you should know
--  ___PHP version:___ [7]
+# Things you should know
+
+Your code should go into ___./src___
+
+### Web server
+-  ___Exposed ports (host:container):___ 80:80
 -  ___Web server:___ apache
--  ___Your code should go into___ ./src
--  ___Exposed port:___ 80
--  ___DB name:___ phpdev
--  ___DB root password:___ helloworld
--  ___DB user:___ iouser
--  ___DB user password:___ iodevpassword
+-  ___PHP version:___ [7](https://hub.docker.com/r/ioayman/php/)
+-  ___Installed extensions:___ PDO (MYSQL,SQLITE)
+
+### Database
+-  ___DB:___ MYSQL
+-  ___DB environment is defined in___ ./db/env
+
+___How to import a database dump on startup?___
+Just put your file at `./db/schema.sql`
+
+___How to import a .sql later on, after the startup?___
+```bash
+cd db
+./import.sh mydump.sql
+```
+
+
 
 ## How to use this?
 ```bash
