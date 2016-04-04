@@ -15,7 +15,7 @@ Your code should go into ___./src___
 -  ___DB:___ MYSQL
 -  ___DB environment is defined in___ ./db/env
 
-___How to import a database dump on startup?___
+___How to import a database dump on startup?___  
 Just put your file at `./db/schema.sql`
 
 ___How to import a .sql later on, after the startup?___
@@ -31,6 +31,9 @@ cd db
 # Clone repo
 git clone https://github.com/IOAyman/docker-phpdev.git myawesomeproject
 cd myawesomeproject
+
+# Do the house cleaning
+python clean.py
 
 # Run the containers
 docker-compose -d up
