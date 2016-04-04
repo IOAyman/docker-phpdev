@@ -34,7 +34,17 @@ git clone https://github.com/IOAyman/docker-phpdev.git myawesomeproject
 cd myawesomeproject
 
 # Do the house cleaning
-python clean.py
+python clean.py -h
+
+usage: clean.py [-h] [-git] [-db dbname root_password user user_password]
+
+Clean and re-initialize your project folder
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -git                  Re-initialize a git repository
+  -db dbname root_password user user_password
+                        Change the default database creadentials
 
 # Run the containers
 docker-compose -d up
