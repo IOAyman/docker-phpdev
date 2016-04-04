@@ -13,6 +13,7 @@ Your code should go into ___./src___
 
 ### Database
 -  ___DB:___ MYSQL
+-  ___DB hostname(what to put in your code):___  'db'
 -  ___DB environment is defined in___ ./db/env
 
 ___How to import a database dump on startup?___  

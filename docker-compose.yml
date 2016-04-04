@@ -5,7 +5,7 @@ server:
   ports:
     - "80:80"
   links:
-    - phpdev-db
+    - phpdev-db:db
 
 phpdev-db:
   image: mysql
