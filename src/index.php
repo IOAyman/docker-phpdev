@@ -10,7 +10,8 @@
 
 <pre>
     <?php
-    const DB_HOST = 'phpdev-db';
+    # TODO -- Change this!
+    const DB_HOST = 'db';
     const DB_NAME = 'phpdev';
     const DB_USER = 'iouser';
     const DB_PASS = 'iodevpassword';
@@ -18,9 +19,17 @@
     try {
         $root = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
         $root->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
-        if (exec("CREATE TABLE IF NOT EXISTS iotable (id INTEGER PRIMARY KEY, data VARCHAR(20))"))
+
+        $root->exec("CREATE TABLE IF NOT EXISTS iotable (id INTEGER PRIMARY KEY, data VARCHAR(20))");
+
+        $statement = $root->query('SELECT * from iotable');
+        $data = $statement->fetchAll();
+        if (empty($data)) {
             $root->exec('INSERT INTO iotable VALUES (99, "tis3atoun wa tis3oun")');
-        var_dump($root->query('select * from iotable')->fetchAll());
+            $statement->execute();
+            $data = $statement->fetchAll();
+        };
+        var_dump($data);
     } catch (PDOException $e) {
         ?>
         <i>
