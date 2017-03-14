@@ -22,7 +22,7 @@ Just put your file at `./db/schema.sql`
 ___How to import a .sql later on, after the startup?___
 ```bash
 cd db
-./import.sh mydump.sql
+bash import.sh mydump.sql
 ```
 
 
